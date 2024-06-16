@@ -1,4 +1,4 @@
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: Raphael Tittel <raphaeltittel@gmail.com>
 pkgname=pw-volume-gui
 pkgver=1.00
 pkgrel=1
