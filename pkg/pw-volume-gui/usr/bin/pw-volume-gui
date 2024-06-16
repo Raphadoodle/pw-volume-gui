@@ -21,11 +21,7 @@ def volumeUp():
         volume=volume+temp[i]
         i+=1
     volume=int(volume)
-    if volume < 100:
-        currentvolume_int.set("  "+str(volume)+"  ")
-    else:
-        currentvolume_int.set(" "+str(volume)+" ")
-
+    currentvolume_int.set(volume)
 
 def volumeDown():
     global currentvolume_int
@@ -40,10 +36,7 @@ def volumeDown():
         volume=volume+temp[i]
         i+=1
     volume=int(volume)
-    if volume < 100:
-        currentvolume_int.set("  "+str(volume)+"  ")
-    else:
-        currentvolume_int.set(" "+str(volume)+" ")
+    currentvolume_int.set(volume)
 
 def getVolume():
     global currentvolume_int
@@ -58,22 +51,18 @@ def getVolume():
         i+=1
     volume=int(volume)
     volume=roundUp(volume)
-    if volume < 100:
-        currentvolume_int.set("  "+str(volume)+"  ")
-    else:
-        currentvolume_int.set(" "+str(volume)+" ")
-
+    currentvolume_int.set(volume)
 
 
 win=Tk()
 win.title("Volume")
-header=Label(win, text="Volume", font=("Symbols Nerd Font Mono", 25, "bold")).grid(row=1, column="12")
+header=Label(win, text="Volume", font=("Symbols Nerd Font Mono", 25, "bold")).pack()
 currentvolume_int=StringVar()
 mainfont=("Symbols Nerd Font Mono", 15)
+volume_down=Button(win, text="-", font=mainfont, command=volumeDown).pack()
+currentvolume=Label(win, textvariable=currentvolume_int, font=mainfont, bg="grey").pack()
+volume_up=Button(win, text="+", font=mainfont, command=volumeUp).pack()
 
-volume_down=Button(win, text="-", font=mainfont, command=volumeDown).grid(row=2, column=10)
-currentvolume=Label(win, textvariable=currentvolume_int, font=mainfont, bg="grey").grid(row=2, column=11)
-volume_up=Button(win, text="+", font=mainfont, command=volumeUp).grid(row=2, column=12)
 
 
 if start==0:
