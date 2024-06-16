@@ -27,7 +27,7 @@ validpgpkeys=()
 
 package() {
 	cd "$pkgname"
-	install -Dm755 main.py ${pkgdir}/usr/bin/pw-volume
+	install -Dm755 main.py ${pkgdir}/usr/bin/pw-volume-gui
 	install -Dm644 README.md ${pkgdir}/usr/share/pw-volume-gui/README.md
-	install -Dm644 LICENSE ${pkgdir}/usr/share/pw-volume-gui/LICENSE
+	install -Dm644 COPYING ${pkgdir}/usr/share/pw-volume-gui/COPYING
 }
