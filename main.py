@@ -61,7 +61,9 @@ def getVolume():
         volume=volume+temp[i]
         i+=1
     volume=int(volume)
+    system("pw-volume change -{}%".format(volume))
     volume=roundUp(volume)
+    system("pw-volume change +{}%".format(volume))
     if volume < 100:
         currentvolume_int.set("  "+str(volume)+"  ")
     else:
